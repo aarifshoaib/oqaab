@@ -107,6 +107,7 @@ export default function Privacy() {
                                 <ul>
                                     <li>• Trusted third-party service providers (like payment processors or delivery services)</li>
                                     <li>• Legal authorities if required by law or to protect our rights</li>
+                                    <li>• Credit/debit card details and personally identifiable information will not be stored, sold, shared or rented to any third parties.</li>
                                 </ul>
                             </div>
                         </div>

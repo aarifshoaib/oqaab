@@ -103,6 +103,7 @@ export default function Terms() {
                   <li>•	To make fake or fraudulent purchases</li>
                   <li>•	To interfere with the functionality of the website</li>
                   <li>•	To post or distribute harmful, illegal, or inappropriate content</li>
+                  <li>• Will not provide any services or products to any Office of Foreign Assets Control (OFAC) sanctioned countries in accordance with UAE law .</li>
                 </ul>
 
 
@@ -158,7 +159,8 @@ export default function Terms() {
                   •	The product is defective <br />
                   •	You received the wrong item <br />
                   •	Custom or personalized T-shirts cannot be returned unless there is a mistake from our end. <br />
-                  •	To request a return, please contact us within 7 days of receiving your order.
+                  •	To request a return, please contact us within 7 days of receiving your order. <br />
+                  •	Refunds will be done on the original mode of payment used .
                 </p>
 
               </div>
