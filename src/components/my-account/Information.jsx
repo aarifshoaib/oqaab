@@ -184,6 +184,18 @@ export default function Information() {
                   readOnly={!isEditing}
                 />
               </fieldset>
+              <fieldset className="">
+                <input 
+                className=""
+                type="text"
+                placeholder="Whatsapp"
+                name="whatsapp"
+                tabIndex={6}
+                defaultValue={loginUser?.whatsapp}
+                aria-required="false"
+                readOnly={!isEditing}
+                />
+              </fieldset>
             </div>
 
           </div>

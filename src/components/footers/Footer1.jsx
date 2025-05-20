@@ -109,7 +109,7 @@ export default function Footer1({
                         Shop No 15, <br />
                         Musalla Building,<br />
                         Al Suq Al Kabeer,<br />
-                        Bur Dubai,<br />
+                        BurDubai,<br />
                         Dubai, UAE
                       </p>
                     

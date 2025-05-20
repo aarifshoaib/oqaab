@@ -116,6 +116,17 @@ export default function Contact2() {
               <div className="text-title mb_8">Phone:</div>
               <p className="text-secondary">045521781</p>
             </div>
+            <div>
+              <div className="text-title mb_8">Whatsapp:</div>
+              <a 
+                href="https://wa.me/+971521238643" 
+                className="text-secondary" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                +971 521238643
+              </a>
+            </div>
             <div className="mb_20">
               <div className="text-title mb_8">Email:</div>
               <p className="text-secondary">info@oqaabfashions.com</p>

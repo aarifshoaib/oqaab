@@ -40,6 +40,7 @@ export default function Login() {
           lname: result.data.lname,
           email: payload.email,
           phone: result.data.phone,
+          whatsapp: result.data.whatsapp,
           isLogin: true
         }
         handleLogin(user);

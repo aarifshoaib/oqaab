@@ -59,7 +59,7 @@ export default function ReturnRefund() {
                                     You may return the item directly to our shop at:
                                     <br />
                                     <span role="img" aria-label="location">📍</span> Oqaab Fashions<br />
-                                    Shop No. 5, Street 4, Al Karama, Dubai, UAE
+                                    Shop No 15, Musalla Building, Al Suq Al Kabeer, BurDubai, Dubai, UAE
                                 </li>
                             </ol>
                             <p>

@@ -95,7 +95,23 @@ export default function Register() {
                   aria-required="true"
                   required
                 />
-
+                <input className=""
+                type="text"
+                placeholder="Phone Number*"
+                name="phone"
+                tabIndex={2}
+                defaultValue=""
+                aria-required="true"
+                required
+                />
+                <input className="" 
+                type="text" 
+                placeholder="Whatsapp Number"
+                name="whatsapp"
+                tabIndex={2}
+                defaultValue=""
+                aria-required="false"
+                />
                 <div className="position-relative password-item">
                   <input
                     className="input-password"

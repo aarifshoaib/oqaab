@@ -166,9 +166,9 @@ export default function Privacy() {
                                         </span>
                                     </a> 
                                     <br />
-                                    Phone: 
-                                    <br />
-                                    Location: Dubai.
+                                    Phone: 045521781<br/>
+                                    Whatsapp: +971 52 123 8643 <br />
+                                    Location: Shop No 15, Musalla Building, Al Suq Al Kabeer, BurDubai, Dubai, UAE
                                 </p>
                             </div>
                         </div>

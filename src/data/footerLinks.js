@@ -1,6 +1,6 @@
 export const socialLinks = [
   { href: "https://www.instagram.com/oqaabfashions_dubai?igsh=Z2hkdHhpNjhyaTd2&utm_source=qr", className: "social-instagram", iconClass: "icon-instagram" },
-  
+  { href: "https://wa.me/+971521238643", className: "social-whatsapp", iconClass: "icon-whatsapp" },
 ];
 
 export const footerLinks = [
@@ -19,7 +19,7 @@ export const footerLinks = [
       { label: "Shipping", href: "#", isLink: false },
       { label: "Contact Us", href: "/contact", isLink: false },
       { label: "Terms & Conditions", href: "/term-of-use", isLink: true },
-      { label: "Gift Card", href: "#", isLink: false },
+      { label: "Gift Card", href: "/gift-404", isLink: false },
     ],
   },
 ];

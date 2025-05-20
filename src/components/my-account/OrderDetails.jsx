@@ -114,6 +114,13 @@ export default function OrderDetails() {
                 {myorders?.shipping || null}
               </div>
             </div>
+            <div className="item">
+              <div className="text-2 text_black-2">Contact Info</div>
+              <div className="text-2 mt_4 fw-6">
+                <div>Email Id: {myorders?.contact_info?.email}</div>
+                <div>Phone No: {myorders?.contact_info?.phone || 'N/A'}</div>
+              </div>
+            </div>
           </div>
           <div className="widget-tabs style-3 widget-order-tab">
             <ul className="widget-menu-tab">
@@ -279,14 +286,18 @@ export default function OrderDetails() {
                 <h4 style={{ marginBottom: 16 }}>Cancel Order</h4>
                 <div style={{ marginBottom: 12 }}>
                   <label htmlFor="cancelReason" style={{ display: "block", marginBottom: 4 }}>Reason for cancellation <span style={{ color: "red" }}>*</span></label>
-                  <textarea
+                  <select
                     id="cancelReason"
                     value={cancelReason}
                     onChange={e => setCancelReason(e.target.value)}
                     required
-                    rows={3}
                     style={{ width: "100%", borderRadius: 4, border: "1px solid #ccc", padding: 8 }}
-                  />
+                  >
+                    <option value="" disabled>Select a cancellation reason</option>
+                    <option value="Size has been Incorrect">Size has been Incorrect</option>
+                    <option value="Order has been placed incorrectly">Order has been placed incorrectly</option>
+                    <option value="Wrong Item has been selected">Wrong Item has been selected</option>
+                  </select>
                   {cancelError && <div style={{ color: "red", marginTop: 4 }}>{cancelError}</div>}
                 </div>
                 <div style={{ display: "flex", justifyContent: "flex-end", gap: 8 }}>

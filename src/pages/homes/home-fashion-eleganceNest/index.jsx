@@ -12,6 +12,7 @@ import Products2 from "@/components/common/Products2";
 import Products7 from "@/components/products/Products7";
 import React from "react";
 import CartTogglerSide from "@/components/common/CartTogglerSide";
+import WhatsappTogglerSide from "@/components/common/WhatsappTogglerSide";
 import MarqueeSection2 from "@/components/common/MarqueeSection2";
 
 import MetaComponent from "@/components/common/MetaComponent";
@@ -39,7 +40,8 @@ export default function HomeFashionElegentNestPage() {
       <Testimonials3 parentClass="" />
       {/* <ShopGram parentClass="flat-spacing" /> */}
       <Footer1 />
-      <CartTogglerSide /> 
+      <CartTogglerSide />
+      <WhatsappTogglerSide />
     </>
   );
 }

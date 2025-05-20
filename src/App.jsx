@@ -129,6 +129,8 @@ import PrivacyPolicy from "./pages/other-pages/privacy";
 import Returns from "./pages/other-pages/Returnsrefunds";
 import MyAccountOrdersPage from "./pages/my-account/my-account-orders";
 import MyAccountOrdersDetailsPage from "./pages/my-account/my-account-orders-details";
+import GiftPageNotFoundPage from "./pages/gift-not";
+
 function App() {
   const { pathname } = useLocation();
   const lastScrollY = useRef(0);
@@ -245,6 +247,7 @@ function App() {
               <Route path="my-account-orders-details/:id" element={<MyAccountOrdersDetailsPage />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="404" element={<PageNotFoundPage />} />
+              <Route path="gift-404" element={<GiftPageNotFoundPage />}/>
               <Route path="FAQs" element={<FAQSPage />} />
               <Route path="term-of-use" element={<TermsOfUsePage />} />
               <Route path="coming-soon" element={<CommingSoonPage />} />

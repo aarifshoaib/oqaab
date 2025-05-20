@@ -31,6 +31,7 @@ export default function Checkout() {
         body: JSON.stringify(payload)
       });
       if (!response.ok) {
+        alert(!response.error)
         throw new Error("Failed to submit form");
       }
       const result = await response.json();
@@ -87,7 +88,7 @@ export default function Checkout() {
                       </div>
                       <div className="grid-2">
                         <input type="text" name="phone" className="mb-3" placeholder="Phone" aria-required={true} defaultValue={loginUser?.phone}  required />
-                        <input type="text" name="whatsapp" placeholder="WhatsApp" className="mb-3" aria-required={true} required />
+                        <input type="text" name="whatsapp" placeholder="WhatsApp" defaultValue={loginUser?.whatsapp} className="mb-3" aria-required={true} required />
                       </div>
                       <div className="grid-2">
                         <div className="tf-select">
@@ -106,7 +107,12 @@ export default function Checkout() {
                         </div>
                         <input type="text" placeholder="Postal Code*" name="postal" className="mb-3" aria-required={true} required />
                       </div>
-                      <div className="grid-12">
+                      <div className="grid-2">
+                        <input type="text" placeholder="Flat No*" name="flat_no" className="mb-3" aria-required={true} required />
+                        <input type="text" placeholder="Building Name*" name="building_name" className="mb-3" aria-required={true} required />
+                      </div>
+                      <div className="grid-2">
+                        <input type="text" placeholder="Area*" name="area" className="mb-3" aria-required={true} required />
                         <input type="text" name="street" placeholder="Street,..." className="mb-3" aria-required={true} required />
                       </div>
 

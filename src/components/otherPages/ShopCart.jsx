@@ -60,7 +60,7 @@ export default function ShopCart() {
           <div className="row">
             <div className="col-xl-8">
               <div className="tf-cart-sold">
-                <div className="notification-sold bg-surface">
+                {/* <div className="notification-sold bg-surface">
                   <img
                     className="icon"
                     alt="img"
@@ -83,7 +83,7 @@ export default function ShopCart() {
                     </div> {" "}
                     minutes! Please checkout now before your items sell out!
                   </div>
-                </div>
+                </div> */}
                 <div className="notification-progress">
                   <div className="text">
                     Shipping Exclusive {" "}

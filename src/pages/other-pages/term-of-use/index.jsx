@@ -25,7 +25,7 @@ export default function TermsOfUsePage() {
         <div className="container-full">
           <div className="row">
             <div className="col-12">
-              <h3 className="heading text-center">Terms of use</h3>
+              <h3 className="heading text-center">Terms and Conditions</h3>
               {/* <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
                   <Link className="link" to={`/`}>

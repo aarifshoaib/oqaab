@@ -92,7 +92,7 @@ export default function Terms() {
             ))}
           </div>
           <div className="right">
-            <h4 className="heading">Terms of uses</h4>
+            <h4 className="heading">Terms and Conditions</h4>
             <div className="terms-of-use-item item-scroll-target" id="terms">
               <h5 className="terms-of-use-title">1. Use of Our Website</h5>
               <div className="terms-of-use-content">
@@ -241,8 +241,9 @@ export default function Terms() {
                       <span className="link"> info@oqaabfashions.com </span>
                     </span>
                   </a> <br/>
-                  Phone: <br/>
-                  Location: Dubai.
+                  Phone: 045521781<br/>
+                  Whatsapp: +971 52 123 8643 <br />
+                  Location: Shop No 15, Musalla Building, Al Suq Al Kabeer, BurDubai, Dubai, UAE
                 </p>
               </div>
             </div>
