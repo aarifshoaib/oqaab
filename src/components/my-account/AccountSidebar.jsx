@@ -3,11 +3,11 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useContextElement } from "@/context/Context";
 
-export default function AccountSidebar() {
+export default function AccountSidebar({ isOffcanvas = false }) {
   const { loginUser, handleLogout } = useContextElement();
   const { pathname } = useLocation();
   return (
-    <div className="wrap-sidebar-account">
+    <div className={`wrap-sidebar-account${isOffcanvas ? " offcanvas-account" : ""}`}>
       <div className="sidebar-account">
         <div className="account-avatar">
           <div className="image">

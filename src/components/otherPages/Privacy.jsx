@@ -140,7 +140,7 @@ export default function Privacy() {
                                     <li>• Request deletion of your data</li>
                                     <li>• Opt-out of marketing communications</li>
                                 </ul>
-                                <p>To make any of these requests, please contact us at: [insert your business email]</p>
+                                <p>To make any of these requests, please contact us at: info@oqaabfashions.com</p>
                             </div>
                         </div>
                         <div className="terms-of-use-item item-scroll-target" id="changes-to-this-policy">

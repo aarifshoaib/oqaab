@@ -58,12 +58,25 @@ export default function MyAccountPage() {
             <i className="icon icon-squares-four" />
           </button>
         </div>
+        {/* Offcanvas for mobile sidebar */}
+        <div className="offcanvas offcanvas-start" tabIndex="-1" id="mbAccount" aria-labelledby="offcanvasAccountLabel">
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasAccountLabel">My Account</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div className="offcanvas-body p-0">
+            <AccountSidebar isOffcanvas={true} />
+          </div>
+        </div>
       </>
 
       <section className="flat-spacing">
         <div className="container">
           <div className="my-account-wrap">
-            <AccountSidebar />
+            {/* Desktop sidebar */}
+            <div className="d-none d-lg-block">
+              <AccountSidebar />
+            </div>
             <Information />
           </div>
         </div>

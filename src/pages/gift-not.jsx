@@ -27,7 +27,7 @@ export default function GiftPageNotFoundPage() {
             {/* <div className="heading">Not</div> */}
             <div>
               {/* <h2 className="title mb_4">Something is Missing.</h2> */}
-              <div className="text body-text-1 text-secondary">
+              <div className="text body-text-1 text-secondary text-2xl">
                 The Gift Card services will be temporarily unavailable.
               </div>
             </div>
