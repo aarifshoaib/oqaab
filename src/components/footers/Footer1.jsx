@@ -132,6 +132,10 @@ export default function Footer1({
                         <i className="icon-phone" />
                         <p> 045521781</p>
                       </li>
+                      <li>
+                        <i className="icon-whatsapp" />
+                        <a href="https://wa.me/+971521238643" target="_blank"><p>+971 52 123 8643</p></a>
+                      </li>
                     </ul>
                     <ul
                       className={`tf-social-icon  ${
