@@ -190,7 +190,11 @@ export default function MobileMenu() {
               </li>
               <li>
                 <i className="icon icon-phone" />
-                <p>+971 501234567</p>
+                <p>045521781</p>
+              </li>
+              <li>
+                <i className="icon icon-whatsapp"/>
+                <a href="https://wa.me/+971521238643" target="_blank"><p>+971 52 123 8643</p></a>
               </li>
             </ul>
           </div>

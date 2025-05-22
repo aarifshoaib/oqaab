@@ -16,7 +16,7 @@ export const footerLinks = [
   {
     heading: "Customer Services",
     items: [
-      { label: "Shipping", href: "#", isLink: false },
+      { label: "Shipping", href: "/shipping", isLink: false },
       { label: "Contact Us", href: "/contact", isLink: false },
       { label: "Terms & Conditions", href: "/term-of-use", isLink: true },
       { label: "Gift Card", href: "/gift-404", isLink: false },

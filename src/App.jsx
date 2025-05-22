@@ -130,6 +130,8 @@ import Returns from "./pages/other-pages/Returnsrefunds";
 import MyAccountOrdersPage from "./pages/my-account/my-account-orders";
 import MyAccountOrdersDetailsPage from "./pages/my-account/my-account-orders-details";
 import GiftPageNotFoundPage from "./pages/gift-not";
+import Shipping from "./pages/my-account/my-account-shipping";
+import MyAccountShippingDetailsPage from "./pages/my-account/my-account-shipping-details"
 
 function App() {
   const { pathname } = useLocation();
@@ -262,6 +264,8 @@ function App() {
               <Route path="my-account-orders" element={<MyAccountOrdersPage />} />
               <Route path="order-tracking" element={<OrderTrackingPage />} />
               <Route path="forget-password" element={<ForgotPasswordPage />} />
+              <Route path="shipping" element={<Shipping />}/>
+              <Route path="my-account-shipping-details/:id" element={<MyAccountShippingDetailsPage />} />
               {/* <Route
                 path="home-fashion-eleganceNest"
                 element={<HomeFashionElegentNestPage />}
