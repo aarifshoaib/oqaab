@@ -2,6 +2,7 @@ import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 import Topbar6 from "@/components/headers/Topbar6";
 import AccountSidebar from "@/components/my-account/AccountSidebar";
+import AccountSidebarMobile from "@/components/my-account/AccountSidebarMobile";
 import Information from "@/components/my-account/Information";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -65,7 +66,7 @@ export default function MyAccountPage() {
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div className="offcanvas-body p-0">
-            <AccountSidebar isOffcanvas={true} />
+            <AccountSidebarMobile />
           </div>
         </div>
       </>
