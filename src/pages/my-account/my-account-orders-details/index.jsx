@@ -2,7 +2,7 @@ import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 import Topbar6 from "@/components/headers/Topbar6";
 import AccountSidebar from "@/components/my-account/AccountSidebar";
-import { Link } from "react-router-dom";
+import AccountSidebarMobile from "@/components/my-account/AccountSidebarMobile";
 import OrderDetails from "@/components/my-account/OrderDetails";
 import React from "react";
 
@@ -10,8 +10,8 @@ import MetaComponent from "@/components/common/MetaComponent";
 const metadata = {
   title:
     "My Account Order Details || OOQAB - Premium JDM & Racing T-Shirts | Titans, Bikes & Car Tees Online",
-  description : "Shop high-quality graphic T-shirts inspired by JDM culture, superbikes, street racing, muscle cars, and titan warriors. Bold designs. Premium fabric. Fast shipping.",
-  keywords : "JDM T-shirts, racing T-shirts, bike T-shirts, car graphic tees, titan T-shirts, streetwear, motorsport fashion, tuner car apparel, anime titans shirts, performance car clothing, biker lifestyle tees"
+  description: "Shop high-quality graphic T-shirts inspired by JDM culture, superbikes, street racing, muscle cars, and titan warriors. Bold designs. Premium fabric. Fast shipping.",
+  keywords: "JDM T-shirts, racing T-shirts, bike T-shirts, car graphic tees, titan T-shirts, streetwear, motorsport fashion, tuner car apparel, anime titans shirts, performance car clothing, biker lifestyle tees"
 };
 
 export default function MyAccountOrdersDetailsPage() {
@@ -30,25 +30,6 @@ export default function MyAccountOrdersDetailsPage() {
             <div className="row">
               <div className="col-12">
                 <h3 className="heading text-center">My Account</h3>
-                {/* <ul className="breadcrumbs d-flex align-items-center justify-content-center">
-                  <li>
-                    <Link className="link" to={`/`}>
-                      Homepage
-                    </Link>
-                  </li>
-                  <li>
-                    <i className="icon-arrRight" />
-                  </li>
-                  <li>
-                    <a className="link" href="#">
-                      Pages
-                    </a>
-                  </li>
-                  <li>
-                    <i className="icon-arrRight" />
-                  </li>
-                  <li>My Account</li>
-                </ul> */}
               </div>
             </div>
           </div>
@@ -59,12 +40,23 @@ export default function MyAccountOrdersDetailsPage() {
             <i className="icon icon-squares-four" />
           </button>
         </div>
+        <div className="offcanvas offcanvas-start" tabIndex="-1" id="mbAccount" aria-labelledby="offcanvasAccountLabel">
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasAccountLabel">My Account</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div className="offcanvas-body p-0">
+            <AccountSidebarMobile />
+          </div>
+        </div>
       </>
 
       <section className="flat-spacing">
         <div className="container">
           <div className="my-account-wrap">
-            <AccountSidebar />
+            <div className="d-none d-lg-block">
+              <AccountSidebar />
+            </div>
             <OrderDetails />
           </div>
         </div>

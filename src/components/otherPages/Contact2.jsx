@@ -114,7 +114,7 @@ export default function Contact2() {
             <h4>Information</h4>
             <div className="mb_20">
               <div className="text-title mb_8">Phone:</div>
-              <p className="text-secondary">045521781</p>
+              <p className="text-secondary">+971 4 5521781</p>
             </div>
             <div>
               <div className="text-title mb_8">Whatsapp:</div>

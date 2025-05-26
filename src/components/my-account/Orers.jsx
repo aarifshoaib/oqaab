@@ -24,6 +24,7 @@ export default function Orders() {
   return (
     <div className="my-account-content">
       <div className="account-orders">
+
         <div className="wrap-account-order">
           <table>
             <thead>

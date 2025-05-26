@@ -3,3 +3,30 @@
         display: block !important;
     }
 }
+
+.timeline-badge.success {
+    background-color: #3DAB25;
+}
+
+.timeline-badge.warning {
+    background-color: #4be939;
+}
+
+.widget-timeline .timeline>li .timeline-badge.warninge::after{
+    background: yellow !important;
+}
+
+a.btn-fixed-whatsapp.d-none.d-lg-flex {
+    position: fixed;
+    top: 60%;
+    right: 20px;
+    background-color: var(--main);
+    width: 60px;
+    height: 60px;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    border-radius: 99px 0px 99px 99px;
+}

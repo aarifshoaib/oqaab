@@ -6,6 +6,7 @@ export default function Information() {
   const [passwordType, setPasswordType] = useState("password");
   const [confirmPasswordType, setConfirmPasswordType] = useState("password");
   const [newPasswordType, setNewPasswordType] = useState("password");
+  const [oldPasswordType, setOldPasswordType] = useState("password");
   const [isEditing, setIsEditing] = useState(false);
   const nav = useNavigate();
   const togglePassword = () => {
@@ -24,6 +25,11 @@ export default function Information() {
       prevType === "password" ? "text" : "password"
     );
   };
+  const toggleOldPassword = () => {
+    setOldPasswordType((prevType) =>
+      prevType === "password" ? "text" : "password"
+    );
+  };
 
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
@@ -37,6 +43,7 @@ export default function Information() {
     const payloadWithEmail = {
       email: loginUser?.email,
       newPassword: payload.newPassword,
+      oldPassword: payload.oldPassword
     };
     try {
       const response = await fetch("https://safaerp.com/apex/oqaab_fashions/images/change-password/", {
@@ -53,7 +60,7 @@ export default function Information() {
       if (result.status == '2') {
         alert(result.message);
         return;
-      }else {
+      } else {
         handleLogout();
         nav("/login", { replace: true });
       }
@@ -71,33 +78,33 @@ export default function Information() {
       const payload = Object.fromEntries(formData.entries());
 
       console.log(payload);
-    
-    try {
-      const response = await fetch("https://safaerp.com/apex/oqaab_fashions/images/customer-update/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      });
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
+
+      try {
+        const response = await fetch("https://safaerp.com/apex/oqaab_fashions/images/customer-update/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          throw new Error("Failed to submit form");
+        }
+        const result = await response.json();
+        if (result.status == '2') {
+          alert(result.message);
+          return;
+        } else {
+          setIsEditing(false);
+          handleLogin({ ...payload, isLogin: true });
+
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        console.log("Submission failed.");
       }
-      const result = await response.json();
-      if (result.status == '2') {
-        alert(result.message);
-        return;
-      }else {
-        setIsEditing(false);
-        handleLogin({...payload, isLogin: true});
-        
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      console.log("Submission failed.");
     }
   }
-}
 
   return (
     <div className="my-account-content">
@@ -116,7 +123,7 @@ export default function Information() {
               }}
             >
               <h5 className="title">Information</h5>
-              <div className="button">
+              <div className="button d-flex justify-content-end mb_20">
                 <button
                   type="submit"
                   className="tf-btn btn-fill btn-style-1 radius-4"
@@ -171,6 +178,9 @@ export default function Information() {
                   readOnly
                 />
               </fieldset>
+            </div>
+            <div className="cols mb_20">
+
               <fieldset className="">
                 <input
                   className=""
@@ -185,26 +195,49 @@ export default function Information() {
                 />
               </fieldset>
               <fieldset className="">
-                <input 
-                className=""
-                type="text"
-                placeholder="Whatsapp"
-                name="whatsapp"
-                tabIndex={6}
-                defaultValue={loginUser?.whatsapp}
-                aria-required="false"
-                readOnly={!isEditing}
+                <input
+                  className=""
+                  type="text"
+                  placeholder="Whatsapp"
+                  name="whatsapp"
+                  tabIndex={6}
+                  defaultValue={loginUser?.whatsapp}
+                  aria-required="false"
+                  readOnly={!isEditing}
                 />
               </fieldset>
             </div>
 
           </div>
         </form>
-        <form className="form-account-details form-has-password" 
+        <form className="form-account-details form-has-password"
           onSubmit={(e) => handlePasswordSubmit(e)}
           method="post">
           <div className="account-password">
             <h5 className="title">Change Password</h5>
+
+            <fieldset className="position-relative password-item mb_20">
+              <input
+                className="input-password"
+                type={oldPasswordType}
+                placeholder="Old Password*"
+                name="oldPassword"
+                tabIndex={2}
+                defaultValue=""
+                aria-required="true"
+                required
+              />
+              <span
+                className={`toggle-password ${!(oldPasswordType === "text") ? "unshow" : ""
+                  }`}
+                onClick={toggleOldPassword}
+              >
+                <i
+                  className={`icon-eye-${!(newPasswordType === "text") ? "hide" : "show"
+                    }-line`}
+                />
+              </span>
+            </fieldset>
 
             <fieldset className="position-relative password-item mb_20">
               <input

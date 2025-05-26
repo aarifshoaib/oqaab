@@ -21,6 +21,7 @@ export default function MyAccountPage() {
       <Topbar6 bgColor="bg-main" />
       <Header1 />
       <>
+
         {/* page-title */}
         <div
           className="page-title"
@@ -30,25 +31,6 @@ export default function MyAccountPage() {
             <div className="row">
               <div className="col-12">
                 <h3 className="heading text-center">My Account</h3>
-                {/* <ul className="breadcrumbs d-flex align-items-center justify-content-center">
-                  <li>
-                    <Link className="link" to={`/`}>
-                      Homepage
-                    </Link>
-                  </li>
-                  <li>
-                    <i className="icon-arrRight" />
-                  </li>
-                  <li>
-                    <a className="link" href="#">
-                      Pages
-                    </a>
-                  </li>
-                  <li>
-                    <i className="icon-arrRight" />
-                  </li>
-                  <li>My Account</li>
-                </ul> */}
               </div>
             </div>
           </div>

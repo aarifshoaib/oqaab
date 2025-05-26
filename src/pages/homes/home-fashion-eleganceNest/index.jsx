@@ -41,7 +41,7 @@ export default function HomeFashionElegentNestPage() {
       {/* <ShopGram parentClass="flat-spacing" /> */}
       <Footer1 />
       <CartTogglerSide />
-      <WhatsappTogglerSide />
+      
     </>
   );
 }

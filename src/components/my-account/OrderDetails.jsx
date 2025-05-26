@@ -158,7 +158,14 @@ export default function OrderDetails() {
                   <ul className="timeline">
                     {myorders?.order_log?.map((item, index) => (
                       <li key={index}>
-                        <div className="timeline-badge" />
+                        <div className={`timeline-badge ${item.status === "CANCELLED" || item.status === "RETURNED"
+                            ? "critical"
+                            : item.status === "DELIVERED"
+                              ? "success"
+                              : index < myorders?.order_log?.length - 1
+                                ? "success"
+                                : "warning"
+                          }`}></div>
                         <div className="timeline-box">
                           <a className="timeline-panel" href="#">
                             <div className="text-2 fw-6">Product {item.status}</div>

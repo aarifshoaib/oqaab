@@ -130,7 +130,7 @@ export default function Footer1({
                       </li>
                       <li>
                         <i className="icon-phone" />
-                        <p> 045521781</p>
+                        <p> +971 4 5521781</p>
                       </li>
                       <li>
                         <i className="icon-whatsapp" />
