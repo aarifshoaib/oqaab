@@ -214,6 +214,9 @@ export default function OrderDetails() {
                       <div className="mt_4">
                         <span className="fw-6">Color :</span> {item.scolor}
                       </div>
+                      <div className="mt_4">
+                        <span className="fw-6">Quantity :</span> {item.quantity}
+                      </div>
                     </div>
 
                   </div>

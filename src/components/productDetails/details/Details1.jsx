@@ -150,7 +150,12 @@ export default function Details1({ product }) {
                         activeSize={activeSize}
                       />
                       <div className="tf-product-info-quantity">
-                        <div className="title mb_12">Quantity: (Available Stock : {maxQuantity}) </div>
+                        {maxQuantity <= 10 && (
+                          <div className="title mb_12">
+                            Quantity: (Available Stock : {maxQuantity})
+                          </div>
+                        )}
+
                         <QuantitySelect
                           maxQuantity={maxQuantity}
                           quantity={
