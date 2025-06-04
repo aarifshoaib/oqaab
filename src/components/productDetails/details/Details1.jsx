@@ -67,7 +67,7 @@ export default function Details1({ product }) {
             <div className="row">
               {/* Product default */}
               <div className="col-md-6">
-                <div className="tf-product-media-wrap ">
+                <div className="tf-product-media-wrap sticky-top">
                   <Slider1
                     setActiveColor={setActiveColor}
                     activeColor={activeColor}
