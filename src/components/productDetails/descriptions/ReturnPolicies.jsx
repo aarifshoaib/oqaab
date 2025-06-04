@@ -6,7 +6,7 @@ export default function ReturnPolicies() {
       {" "}
       <div className="text-btn-uppercase mb_12">Return Policies</div>
       <p className="mb_12 text-secondary">
-        At OOQAB, we stand behind the quality of our products. If you're not
+        At OQAAB, we stand behind the quality of our products. If you're not
         completely satisfied with your purchase, we offer hassle-free returns
         within 30 days of delivery.
       </p>

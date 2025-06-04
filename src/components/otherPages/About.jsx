@@ -21,7 +21,7 @@ export default function About() {
           <div className="col-md-6">
             <div className="about-us-content">
               <h3 className="title wow fadeInUp">
-                OOQAB – Offering rare, classic, traditional and beautiful items worldwide 
+                OQAAB – Offering rare, classic, traditional and beautiful items worldwide 
               </h3>
               <div className="widget-tabs style-3">
                 <ul className="widget-menu-tab wow fadeInUp">

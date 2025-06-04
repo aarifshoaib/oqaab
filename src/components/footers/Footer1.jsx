@@ -279,7 +279,7 @@ export default function Footer1({
                   <div className="footer-bottom-wrap">
                     <div className="left">
                       <p className="text-caption-1">
-                        ©{new Date().getFullYear()} OOQAB. All Rights Reserved.
+                        ©{new Date().getFullYear()} OQAAB. All Rights Reserved.
                       </p>
                       <div className="tf-cur justify-content-end">
                         <div className="tf-currencies">

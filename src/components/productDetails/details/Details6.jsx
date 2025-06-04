@@ -252,7 +252,7 @@ export default function Details6({ product = allProducts[0] }) {
                             </div>
                             <div className="line-bt" />
                             <div>
-                              <h6>Fashion OOQAB</h6>
+                              <h6>Fashion OQAAB</h6>
                               <p>Pickup available. Usually ready in 24 hours</p>
                             </div>
                             <div>
@@ -270,7 +270,7 @@ export default function Details6({ product = allProducts[0] }) {
                       </li>
                       <li>
                         <p className="text-caption-1">Vendor:</p>
-                        <p className="text-caption-1 text-1">OOQAB</p>
+                        <p className="text-caption-1 text-1">OQAAB</p>
                       </li>
                       <li>
                         <p className="text-caption-1">Available:</p>

@@ -127,7 +127,7 @@ export default function SizeGuide() {
                     ))}
                   </div>
                   <div>
-                    <h6 className="suggests-title">OOQAB suggests for you:</h6>
+                    <h6 className="suggests-title">OQAAB suggests for you:</h6>
                     <div className="suggests-list">
                       <a href="#" className="suggests-item link text-button">
                         L - shirt

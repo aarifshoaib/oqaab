@@ -17,7 +17,7 @@ export default function Banner() {
           <div className="content">
             <h3 className="heading wow fadeInUp">
               Big Savings Up To 25% Off <br />
-              At The OOQAB Shop
+              At The OQAAB Shop
             </h3>
             <div className="text body-text-1 wow fadeInUp">
               25% off select long-lasting edible chews

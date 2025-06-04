@@ -67,7 +67,7 @@ export default function Details1({ product }) {
             <div className="row">
               {/* Product default */}
               <div className="col-md-6">
-                <div className="tf-product-media-wrap sticky-top">
+                <div className="tf-product-media-wrap ">
                   <Slider1
                     setActiveColor={setActiveColor}
                     activeColor={activeColor}
@@ -301,7 +301,7 @@ export default function Details1({ product }) {
                               </div>
                               <div className="line-bt" />
                               <div>
-                                <h6>Fashion OOQAB</h6>
+                                <h6>Fashion OQAAB</h6>
                                 <p>Pickup available. Usually ready in 24 hours</p>
                               </div>
                               <div>

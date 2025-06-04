@@ -113,7 +113,7 @@ export default function Reviews() {
               <div className="image">
                 <img
                   alt=""
-                  src="/images/avatar/user-OOQAB.jpg"
+                  src="/images/avatar/user-OQAAB.jpg"
                   width={104}
                   height={104}
                 />
@@ -121,7 +121,7 @@ export default function Reviews() {
               <div>
                 <h6>
                   <a href="#" className="link">
-                    Reply from OOQAB
+                    Reply from OQAAB
                   </a>
                 </h6>
                 <div className="day text-secondary-2 text-caption-1">
@@ -130,7 +130,7 @@ export default function Reviews() {
               </div>
             </div>
             <p className="text-secondary">
-              We love to hear it! Part of what we love most about OOQAB is how
+              We love to hear it! Part of what we love most about OQAAB is how
               much it empowers store owners like yourself to build a beautiful
               website without having to hire a developer :) Thank you for this
               fantastic review!
