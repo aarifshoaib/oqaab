@@ -18,6 +18,9 @@ export default function Slider1({
 
   useEffect(() => {
     // Function to initialize Drift
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const imageZoom = () => {
       const driftAll = document.querySelectorAll(".tf-image-zoom");
       const pane = document.querySelector(".tf-zoom-main");
@@ -106,7 +109,7 @@ export default function Slider1({
   }, []);
 
   return (
-    <div className="thumbs-slider">
+    <div className="thumbs-slider" >
       <Swiper
         className="swiper tf-product-media-thumbs other-image-zoom"
         dir="ltr"
@@ -191,7 +194,7 @@ export default function Slider1({
               className="item"
               data-pswp-width={slide.width}
               data-pswp-height={slide.height}
-              //   onClick={() => openLightbox(index)}
+            //   onClick={() => openLightbox(index)}
             >
               <img
                 className="tf-image-zoom lazyload"
