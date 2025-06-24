@@ -28,9 +28,9 @@ export default function ShopCart() {
   const { cartProducts, setCartProducts, totalPrice, discount } = useContextElement();
   const [isChecked, setIsChecked] = useState(true);
 
-  const setQuantity = (id, quantity) => {
+  const setQuantity = (id, quantity, color, size) => {
     if (quantity >= 1) {
-      const item = cartProducts.filter((elm) => elm.id == id)[0];
+      const item = cartProducts.filter((elm) => elm.id == id && elm.scolor == color && elm.ssize == size)[0];
       const items = [...cartProducts];
       const itemIndex = items.indexOf(item);
       item.quantity = quantity;
@@ -38,8 +38,16 @@ export default function ShopCart() {
       setCartProducts(items);
     }
   };
-  const removeItem = (id) => {
-    setCartProducts((pre) => [...pre.filter((elm) => elm.id != id)]);
+  const removeItem = (id, color, size) => {
+    console.log("removeItem", id, color, size);
+    console.log("cartProducts", cartProducts);
+    setCartProducts((prevCart) =>
+      prevCart.filter((elm) =>
+        !(elm.id === id &&
+          elm.ssize === (size || "") &&
+          elm.scolor === (color || ""))
+      )
+    );
   };
   const handleOptionChange = (elm) => {
     setSelectedOption(elm);
@@ -163,7 +171,7 @@ export default function ShopCart() {
                               <span
                                 className="btn-quantity btn-decrease"
                                 onClick={() =>
-                                  setQuantity(elm.id, elm.quantity - 1)
+                                  setQuantity(elm.id, elm.quantity - 1, elm.scolor, elm.ssize)
                                 }
                               >
                                 -
@@ -178,7 +186,7 @@ export default function ShopCart() {
                               <span
                                 className="btn-quantity btn-increase"
                                 onClick={() =>
-                                  setQuantity(elm.id, elm.quantity + 1)
+                                  setQuantity(elm.id, elm.quantity + 1, elm.scolor, elm.ssize)
                                 }
                               >
                                 +
@@ -196,7 +204,7 @@ export default function ShopCart() {
                           <td
                             data-cart-title="Remove"
                             className="remove-cart"
-                            onClick={() => removeItem(elm.id)}
+                            onClick={() => removeItem(elm.id, elm.scolor, elm.ssize)}
                           >
                             <span className="remove icon icon-close" />
                           </td>

@@ -106,38 +106,107 @@ export default function Context({ children }) {
     fetchCollections();
   }, []);
 
-  const isAddedToCartProducts = (id) => {
-    if (cartProducts.filter((elm) => elm.id == id)[0]) {
+  // const isAddedToCartProducts = (id) => {
+  //   if (cartProducts.filter((elm) => elm.id == id)[0]) {
+  //     return true;
+  //   }
+  //   return false;
+  // };
+
+  const isAddedToCartProducts = (id, size, color) => {
+    const item = cartProducts.find((elm) =>
+      elm.id === id &&
+      elm.ssize === (size || "") &&
+      elm.scolor === (color || "")
+    );
+
+    if (item) {
       return true;
     }
     return false;
   };
+  
   const addProductToCart = (id, qty, size, color, isModal = true) => {
-    if (!isAddedToCartProducts(id)) {
+    if (!isAddedToCartProducts(id) || 1==1) {
+      // const item = {
+      //   ...allProductsData.filter((elm) => elm.id == id)[0],
+      //   quantity: qty ? qty : 1,
+      //   ssize: size ? size : "",
+      //   scolor: color ? color : "",
+      // };
+
+      // setCartProducts((pre) => [...pre, item]);
+      // if (isModal) {
+      //   openCartModal();
+      // }
       const item = {
         ...allProductsData.filter((elm) => elm.id == id)[0],
         quantity: qty ? qty : 1,
         ssize: size ? size : "",
         scolor: color ? color : "",
       };
-      setCartProducts((pre) => [...pre, item]);
+
+      setCartProducts((prevCart) => {
+        // Check if item with same id, size, and color already exists
+        const existingItemIndex = prevCart.findIndex(
+          (cartItem) =>
+            cartItem.id === id &&
+            cartItem.ssize === (size || "") &&
+            cartItem.scolor === (color || "")
+        );
+
+        if (existingItemIndex !== -1) {
+          // Item exists, update quantity
+          const updatedCart = [...prevCart];
+          updatedCart[existingItemIndex] = {
+            ...updatedCart[existingItemIndex],
+            quantity: updatedCart[existingItemIndex].quantity + (qty || 1)
+          };
+          return updatedCart;
+        } else {
+          // Item doesn't exist, add new item
+          return [...prevCart, item];
+        }
+      });
+
       if (isModal) {
         openCartModal();
       }
     }
   };
 
-  const updateQuantity = (id, qty) => {
-    if (isAddedToCartProducts(id)) {
-      let item = cartProducts.filter((elm) => elm.id == id)[0];
-      let items = [...cartProducts];
-      const itemIndex = items.indexOf(item);
+  const updateQuantity = (id, qty, size, color) => {
+    setCartProducts((prevCart) => {
+      // Find the item with matching id, size, and color
+      const itemIndex = prevCart.findIndex((elm) =>
+        elm.id === id &&
+        elm.ssize === (size || "") &&
+        elm.scolor === (color || "")
+      );
 
-      item.quantity = qty / 1;
-      items[itemIndex] = item;
-      setCartProducts(items);
-    }
+      if (itemIndex !== -1) {
+        // Item found, update its quantity
+        const updatedCart = [...prevCart];
+        updatedCart[itemIndex] = {
+          ...updatedCart[itemIndex],
+          quantity: qty / 1 // Convert to number
+        };
+        return updatedCart;
+      }
+      return prevCart;
+    });
   };
+  // const updateQuantity = (id, qty) => {
+  //   if (isAddedToCartProducts(id) || 1==1) {
+  //     let item = cartProducts.filter((elm) => elm.id == id)[0];
+  //     let items = [...cartProducts];
+  //     const itemIndex = items.indexOf(item);
+
+  //     item.quantity = qty / 1;
+  //     items[itemIndex] = item;
+  //     setCartProducts(items);
+  //   }
+  // };
 
   const addToWishlist = (id) => {
     if (!wishList.includes(id)) {

@@ -14,7 +14,6 @@ export default function Products4({ parentClass = "", title = "Today's Top Picks
   useEffect(() => {
     const fetchTopPicks = async () => {
       try {
-        console.log("cartItems", cartProducts);
         const response = await fetchapi("images/top-picks/");
         let parsedProducts = response.data.map((item) => {
           const parsed = JSON.parse(item.product_json);
@@ -27,10 +26,7 @@ export default function Products4({ parentClass = "", title = "Today's Top Picks
           );
         }
         if (id) {
-          console.log("id", id);
-          console.log("parsedProducts before", parsedProducts);
           parsedProducts = parsedProducts.filter((item) => item.id != id);
-          console.log("parsedProducts after", parsedProducts);
         }
         setoProducts(parsedProducts);
       } catch (error) {

@@ -2,7 +2,7 @@ import { slides2 } from "@/data/heroSlides";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
-import { Pagination } from "swiper/modules";
+import { Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { fetchapi } from "@/utlis/api";
 
@@ -26,19 +26,17 @@ export default function Hero() {
   return (
     <section className="tf-slideshow slider-style2 slider-effect-fade">
       <Swiper
-        dir="ltr"
+        effect="fade"
         spaceBetween={0}
-        loop={false}
-        autoplay={true}
-        breakpoints={{
-          1024: { slidesPerView: 1 },
-          768: { slidesPerView: 1 },
-          320: { slidesPerView: 1 },
-        }}
-        modules={[Pagination]}
+        centeredSlides={false}
+        slidesPerView={1}
+        loop={true}
+        modules={[EffectFade, Autoplay, Pagination]}
+        autoplay={{ delay: 3000 }}
+        dir="ltr"
         pagination={{
           clickable: true,
-          el: ".spd30",
+          el: ".spd55",
         }}
       >
         {slides.map((slide, index) => (

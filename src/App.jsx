@@ -132,6 +132,7 @@ import MyAccountOrdersDetailsPage from "./pages/my-account/my-account-orders-det
 import GiftPageNotFoundPage from "./pages/gift-not";
 import Shipping from "./pages/my-account/my-account-shipping";
 import MyAccountShippingDetailsPage from "./pages/my-account/my-account-shipping-details"
+import PaymentResult from "./components/otherPages/resposne";
 
 function App() {
   const { pathname } = useLocation();
@@ -242,6 +243,7 @@ function App() {
               <Route index element={<HomeFashionElegentNestPage />} />
               <Route path="checkout" element={<Checkout />} />
               <Route path="register" element={<RegisterPage />} />
+              <Route path="/payment-result" element={<PaymentResult />} />
               <Route path="order-confirmation/:id" element={<OrderConfirmation />} />
               <Route path="shop-by-collections/:id" element={<ShopByCollectios />} />
               <Route path="all-collections" element={<ShopAllCollections />} />

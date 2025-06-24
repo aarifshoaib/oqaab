@@ -13,8 +13,18 @@ export default function CartModal() {
     discount,
   } = useContextElement();
 
-  const removeItem = (id) => {
-    setCartProducts((pre) => [...pre.filter((elm) => elm.id != id)]);
+  // const removeItem = (id, size, color) => {
+  //   setCartProducts((pre) => [...pre.filter((elm) => elm.id != id)]);
+  // };
+
+  const removeItem = (id, size, color) => {
+    setCartProducts((prevCart) =>
+      prevCart.filter((elm) =>
+        !(elm.id === id &&
+          elm.ssize === (size || "") &&
+          elm.scolor === (color || ""))
+      )
+    );
   };
 
   const [currentOpenPopup, setCurrentOpenPopup] = useState("");
@@ -121,13 +131,13 @@ export default function CartModal() {
                                 </div>
                                 <div
                                   className="text-button tf-btn-remove remove"
-                                  onClick={() => removeItem(product.id)}
+                                  onClick={() => removeItem(product.id, product.ssize, product.scolor)}
                                 >
                                   Remove
                                 </div>
                               </div>
                               <div className="d-flex align-items-center justify-content-between flex-wrap gap-12">
-                                <div className="text-secondary-2">{product.ssize}/ {product.scolor}</div>
+                                <div className="text-secondary-2">{product.ssize}/{product.scolor}</div>
                                 <div className="text-button">
                                   {product.quantity} X <span className="uae-icon" title="aed" />
                                   {product?.price?.toFixed(2)}

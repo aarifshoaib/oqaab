@@ -143,17 +143,12 @@ export default function QuickAdd() {
                     <QuantitySelect
                     maxQuantity={maxQuantity}
                       quantity={
-                        isAddedToCartProducts(item.id)
-                          ? cartProducts.filter((elm) => elm.id === item.id)[0]
-                            .quantity
-                          : quantity
+                        quantity
                       }
                       setQuantity={(qty) => {
-                        if (isAddedToCartProducts(item.id)) {
-                          updateQuantity(item.id, qty);
-                        } else {
+                       
                           setQuantity(qty);
-                        }
+                        
                       }}
                     />
                   </div>

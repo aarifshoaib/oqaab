@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { act, useEffect, useState } from "react";
 import Slider1 from "../sliders/Slider1";
 import ColorSelect from "../ColorSelect";
 import SizeSelect from "../SizeSelect";
@@ -25,6 +25,7 @@ export default function Details1({ product }) {
 
 
   useEffect(() => {
+    console.log('Product Details:', product);
     const colorOptions = product?.filterColor?.map((color) => ({
       id: `values-${color}`,
       value: color.charAt(0).toUpperCase() + color.slice(1),
@@ -41,7 +42,7 @@ export default function Details1({ product }) {
     }));
     setSize(sizeOptions);
     setActiveSize(product?.filterSizes?.[0] || "L");
-    
+
   }, [product]);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ export default function Details1({ product }) {
           item.size === activeSize &&
           item.color.toLowerCase() === activeColor.toLowerCase()
       );
-
+      console.log('Matched Stock:', matchedStock);
       setMaxQuantity(matchedStock ? matchedStock.stocks : 0);
     }
   }, [activeSize, activeColor, product]);
@@ -145,7 +146,7 @@ export default function Details1({ product }) {
                         activeColor={activeColor}
                         colorOptions={color}
                       />
-                      <SizeSelect sizes={size} 
+                      <SizeSelect sizes={size}
                         setActiveSize={setActiveSize}
                         activeSize={activeSize}
                       />
@@ -157,44 +158,32 @@ export default function Details1({ product }) {
                         )}
 
                         <QuantitySelect
-                          maxQuantity={maxQuantity}
                           quantity={
-                            isAddedToCartProducts(product.id)
-                              ? cartProducts.filter(
-                                (elm) => elm.id == product.id
-                              )[0].quantity
-                              : quantity
+                            quantity
                           }
+                          maxQuantity={maxQuantity}
                           setQuantity={(qty) => {
-                            if (isAddedToCartProducts(product.id)) {
-                              updateQuantity(product.id, qty);
+                            if (qty > maxQuantity) {
+                              setQuantity(maxQuantity);
                             } else {
                               setQuantity(qty);
                             }
                           }}
-                        /> 
+                        />
                       </div>
                       <div>
                         <div className="tf-product-info-by-btn mb_10">
                           <a
-                            onClick={() => addProductToCart(product.id, quantity, activeSize, activeColor)}
+                            onClick={() => { addProductToCart(product.id, quantity, activeSize, activeColor); setQuantity(1); }}
                             className="btn-style-2 flex-grow-1 text-btn-uppercase fw-6 btn-add-to-cart"
                           >
                             <span>
-                              {isAddedToCartProducts(product.id)
-                                ? "Already Added"
-                                : "Add to cart - "} {" "}
+                             
+                              {"Add to cart - "} {" "}
                             </span>
                             <span className="tf-qty-price total-price">
                               <span className="uae-icon" title="aed" /> {" "} {" "}
-                              {isAddedToCartProducts(product.id)
-                                ? (
-                                  product.price *
-                                  cartProducts.filter(
-                                    (elm) => elm.id == product.id
-                                  )[0].quantity
-                                ).toFixed(2)
-                                : (product.price * quantity).toFixed(2)}{" "}
+                              {(product.price * quantity).toFixed(2)}{" "}
                             </span>
                           </a>
                           {/* <a
@@ -228,7 +217,7 @@ export default function Details1({ product }) {
                         </a> */}
                       </div>
                       <div className="tf-product-info-help">
-                      
+
                         {/* <div className="tf-product-info-extra-link">
                           <a
                             href="#delivery_return"
@@ -276,8 +265,8 @@ export default function Details1({ product }) {
                             <i className="icon-arrowClockwise" />
                           </div>
                           <p className="text-caption-1">
-                            Return within <span>7 days</span> of purchase. 
-                               Terms and conditions apply.
+                            Return within <span>7 days</span> of purchase.
+                            Terms and conditions apply.
                           </p>
                         </div>
                         <div className="dropdown dropdown-store-location">
@@ -305,8 +294,8 @@ export default function Details1({ product }) {
                                 <p>Pickup available. Usually ready in 24 hours</p>
                               </div>
                               <div>
-                                <p>766 Rosalinda Forges Suite 044,</p>
-                                <p>Gracielahaven, Oregon</p>
+                                <p>Bur Dubai,</p>
+                                <p>Dubai, UAE</p>
                               </div>
                             </div>
                           </div>
@@ -367,30 +356,7 @@ export default function Details1({ product }) {
                               height={64}
                             />
                           </a>
-                          <a href="#">
-                            <img
-                              alt=""
-                              src="/images/payment/img-4.png"
-                              width={98}
-                              height={64}
-                            />
-                          </a>
-                          <a href="#">
-                            <img
-                              alt=""
-                              src="/images/payment/img-5.png"
-                              width={102}
-                              height={64}
-                            />
-                          </a>
-                          <a href="#">
-                            <img
-                              alt=""
-                              src="/images/payment/img-6.png"
-                              width={98}
-                              height={64}
-                            />
-                          </a>
+                        
                         </div>
                       </div>
                     </div>
@@ -403,6 +369,6 @@ export default function Details1({ product }) {
         </div>
         {/* <ProductStikyBottom /> */}
       </section>
-    ) 
+    )
   );
 }

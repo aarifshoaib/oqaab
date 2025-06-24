@@ -18,4 +18,9 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    headers: {
+      "Content-Security-Policy": "frame-ancestors 'self' http://localhost:5173 https://testflex.cybersource.com",
+    },
+  }
 });
