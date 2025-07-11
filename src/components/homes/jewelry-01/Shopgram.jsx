@@ -18,7 +18,6 @@ export default function Shopgram() {
           spaceBetween={10}
           pagination={{
             clickable: true,
-            clickable: true,
           }}
           breakpoints={{
             0: {

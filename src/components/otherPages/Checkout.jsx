@@ -155,7 +155,7 @@ function PaymentForm({ onShippingInfoUpdate }) {
 
       // STEP 2: Initialize payment with Cybersource
       console.log('Initializing payment...');
-      const paymentInitResponse = await axios.post("http://localhost:3000/payments/initiate", {
+      const paymentInitResponse = await axios.post("https://genuinely-striking-man.ngrok-free.app/payments/initiate", {
         orderId: orderResult.orderId, // Include order ID for tracking
         amount: totalPrice.toFixed(2),
         currency: "AED",

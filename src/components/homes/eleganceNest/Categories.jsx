@@ -53,7 +53,6 @@ export default function Categories() {
           }}
           pagination={{
             clickable: true,
-            clickable: true,
           }}
         >
           {collections.map((slide, index) => (

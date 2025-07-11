@@ -16,7 +16,6 @@ export default function Categories() {
         spaceBetween={20}
         pagination={{
           clickable: true,
-          clickable: true,
         }}
         breakpoints={{
           1424: { slidesPerView: 6 },

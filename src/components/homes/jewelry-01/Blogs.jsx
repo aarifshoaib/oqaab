@@ -18,7 +18,6 @@ export default function Blogs() {
           spaceBetween={30}
           pagination={{
             clickable: true,
-            clickable: true,
           }}
           breakpoints={{
             0: {

@@ -28,7 +28,6 @@ export default function Testimonials2() {
           modules={[Pagination]}
           pagination={{
             clickable: true,
-            clickable: true,
             el: ".spd32",
           }}
         >

@@ -40,7 +40,6 @@ export default function Lookbook() {
           pagination={{
             clickable: true,
             el: ".spd340",
-            clickable: true,
           }}
         >
           <SwiperSlide className="swiper-slide">
